@@ -1,0 +1,17 @@
+1- Instalacio del Projecte
+
+composer create-project laravel/laravel IdentityEYE
+
+2- Llançar-la per consola
+
+php artisan serve
+
+3- Creear intranet
+
+php artisan make:auth
+
+
+API CLAU
+
+ @php artisan key:generate
+Application key [base64:/ugTVfmGQrPIo9a7k5I47qw/mfF7gWyhdtKZV77Xhd8=] set successfully.
