@@ -12,13 +12,13 @@
             <ul class="list-unstyled components">
                 <li>
                     <a href="{{ url('') }}">
-                        <i class="glyphicon glyphicon-home"></i>
+                        <i class="glyphicon glyphicon-home activat"></i>
                         Inicio
                     </a>
                 </li>
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-user activat"></i>
                         Perfil
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -29,13 +29,13 @@
                 </li>
                 <li>
                     <a href="{{ route('novetats') }}">
-                        <i class="glyphicon glyphicon-send"></i>
+                        <i class="glyphicon glyphicon-send activat"></i>
                         Novedades
                     </a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <i class="glyphicon glyphicon-link"></i>
+                        <i class="glyphicon glyphicon-link activat"></i>
                         Generador Identity
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -46,13 +46,13 @@
                 </li>
                 <li>
                     <a href="{{ route('combinacions') }}">
-                        <i class="glyphicon glyphicon-duplicate"></i>
+                        <i class="glyphicon glyphicon-duplicate activat"></i>
                         Combinación Guardada
                     </a>
                 </li>
                 <li class="active">
                     <a href="{{ route('proximaModa') }}">
-                        <i class="glyphicon glyphicon-briefcase"></i>
+                        <i class="glyphicon glyphicon-briefcase activat"></i>
                         Próxima Moda
                     </a>
                 </li>
