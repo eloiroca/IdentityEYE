@@ -3,11 +3,11 @@
 @section('sidebar')
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3> 
-                
-                    
+            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3>
+
+
             <strong>{{ Auth::user()->name }}</strong>
-              
+
         </div>
 
         <ul class="list-unstyled components">
@@ -57,7 +57,7 @@
                     Próxima Moda
                 </a>
             </li>
-            
+
         </ul>
 
         <ul class="list-unstyled CTAs">
@@ -87,7 +87,7 @@
                     <div class="col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading"><h4>Datos Personales</h4></div>
-                            
+
                             <div class="panel-body">
                                 <div class="form-group row">
                                     <input type="hidden" name="id" value="<?php echo $dades['dadesUsuari']->id?>">
@@ -169,18 +169,18 @@
                                     <button type="button" id="boto" class="btn btn-primary" onclick="triar_subestacio()">Saber Subestación</button>
                                     <div id="subestacions"></div>
                                     <div id="div_subestacio" class="col-2-edit">
-                                        
+
                                     </div>
                                     <img class="foto_sidebar" src="{{ URL::asset('img/contingut/gif_pel.gif') }}"/>
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                     <button type="submit" id="boto_enviar_primer_perfil" class="btn btn-success">Actualizar</button>
                 </form>
-                
+
             </div>
-        </div>     
+        </div>
     </div>
 </div>
 

@@ -11,30 +11,30 @@ use Illuminate\Support\Facades\URL;
 
 class ModesController extends Controller
 {
-    
+
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     //Funcio que mostrara si es administrador el formulari per insertar una nova moda
     public function afegirProximaModa($error = " "){
         $es_admin = PerfilModel::saber_si_es_admin(Auth::user()->id);
         if ($es_admin){
-            
-            $dades = ['error' => $error]; 
+
+            $dades = ['error' => $error];
             return view('afegirProximaModa')->with('dades', $dades);
-            
+
         }else{
            return redirect('perfil');
         }
     }
-    
+
     //Funcio que rebra totes les dades de la nova moda per guardar-ho a dins de la BD
     public function dades_proximaModa(Request $request){
-        
+
         if($request->isMethod('post')){
             $data = $request->all();
             $dades = array();
@@ -51,37 +51,37 @@ class ModesController extends Controller
             }
         }
     }
-    
-    
-    
+
+
+
     //Funcio que mostrara les poroximes modes
     public function proximaModa(){
-        
+
        $data = getdate();
         $dia = $data['mday'];
         $mes = $data['mon'];
         $any = $data['year'];
         $calendari = $this->calendari($dia,$mes,$any);
-        
+
         try{
             //Consumir RSS
-            $rss = simplexml_load_string(file_get_contents(URL::asset('php/xml_proxima_moda.php')));   
+            $rss = simplexml_load_string(file_get_contents(URL::asset('php/xml_proxima_moda.php')));
         }
-        
+
         catch(Exception $e){
             echo 'Excepción capturada: ',  $e->getMessage(), "\n";
         }
-        
+
         $dades = ['rss' => $rss, 'calendari' => $calendari];
         return view('proximesModes')->with('dades', $dades);
-        
-        
+
+
     }
-    
+
     public function calendari($dia, $mes, $any){
 	//CODI CALENDARI
 	$dia_semana = date('N', mktime(0,0,0,$mes,1,$any));
-	$num_dies = date('t', mktime(0,0,0,$mes,$dia,$any));	
+	$num_dies = date('t', mktime(0,0,0,$mes,$dia,$any));
 	$calendarienhtml = '<table border=1 id="tau_cal">';
 
 	switch ($mes){
@@ -109,37 +109,37 @@ class ModesController extends Controller
 		break;
 		case 12: $calendarienhtml .= '<th class="th" height=55 colspan="7">Diciembre</th>';
 	}
-	
+
 	$calendarienhtml .= '<tr>';
-	
+
 	$diallista = array ('L', 'M', 'X', 'J', 'V', 'S', 'D');
 	for ($i=0;$i<=6;$i++){
 		$calendarienhtml .= '<td class="td" style="background-color:#A9D0F5;" height=35 width=50 >'.$diallista[$i].'</td>';
 	}
-	
+
 	$calendarienhtml .= '<tr class="td">';
-        
+
 	$dia_actual = 1-($dia_semana-1);
-        
+
 	while ($dia_actual<=$num_dies){
-		
+
 		for ($j=1;$j<=7;$j++){
-			
+
 			if($dia_actual>$num_dies || $dia_actual < 1){
 				$calendarienhtml .= '<td class="td" ></td>';
 			}
 			else if($dia_actual<=$num_dies){
-				
-				$calendarienhtml .= '<td class="td" >'.$dia_actual.'</td>';
+
+				$calendarienhtml .= '<td class="td dia'.$dia_actual.'" >'.$dia_actual.'</td>';
 			}
 			$dia_actual++;
 		}
-		$calendarienhtml .= "<tr>";					
+		$calendarienhtml .= "<tr>";
 	}
-	
+
 	$calendarienhtml .= '</table>';
 	return $calendarienhtml;
     }
-    
-    
+
+
 }
