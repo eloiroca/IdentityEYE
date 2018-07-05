@@ -3,11 +3,11 @@
 @section('sidebar')
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3> 
-                
-                    
+            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3>
+
+
             <strong>{{ Auth::user()->name }}</strong>
-              
+
         </div>
 
         <ul class="list-unstyled components">
@@ -57,7 +57,7 @@
                     Próxima Moda
                 </a>
             </li>
-            
+
         </ul>
 
         <ul class="list-unstyled CTAs">
@@ -83,17 +83,17 @@
             <h3 class="h3_normal">Paleta de Colores Personal</h3>
             <hr class="hr_dreta">
                 <form action="{{ url('dades_editarColors') }}" method="POST" name="form" accept-charset="utf-8">
-                <?php 
+                <?php
                     for ($i=0; $i<count($dades['colors']); $i++){
-                        echo "<div class='col-sm-2 colors' style='background-color:".$dades['colors'][$i]->color.";'><input type='checkbox' name='array_checkbox[]' value='".$dades['colors'][$i]->color."'>".$dades['colors'][$i]->color."</div>";
+                        echo "<div class='col-sm-2 colors' style='background-color:".$dades['colors'][$i]->color.";'><input type='checkbox' name='array_checkbox[]' value='".$dades['colors'][$i]->color."'></div>";
                     }
 
                 ?>{!! csrf_field() !!}
                     <button type="submit" id="boto_enviar_colors" class="btn btn-success">Enviar</button>
-                    
+
                 </form>
         </div>
-        
+
         <div class="col-sm-6">
             <h3 class="h3_normal">Subestación que perteneces</h3>
             <hr class="hr_dreta">
@@ -101,11 +101,11 @@
                 <h4>{{ $dades['dades_subestacio'][0]->subestacio }}</h4>
                 <?php echo "<img class='img_subestacio_configuracio' src='data:image/jpeg; base64,".base64_encode($dades['dades_subestacio'][0]->foto)."'>";?>
             </div>
-            
-            
-            
+
+
+
         </div>
-        
+
     </div>
 </div>
 
