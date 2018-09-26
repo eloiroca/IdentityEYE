@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('sidebar')
+   
     <nav id="sidebar">
         <div class="sidebar-header">
             <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3> 

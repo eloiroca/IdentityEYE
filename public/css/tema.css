@@ -33,7 +33,7 @@ color: #fff;background-color: #0e364c;}
 
 .barra{
     display: inline;
-    
+
 }
 
 #img_logo{
@@ -71,7 +71,7 @@ i, span {
     overflow-y: scroll;
     top: 0;
     bottom: 0;
-    
+
 }
 
 #sidebar::-webkit-scrollbar{
@@ -94,7 +94,7 @@ i, span {
 
 #sidebar.active .sidebar-header strong {
     display: block;
-    
+
 }
 
 #sidebar ul li a {
@@ -214,7 +214,7 @@ a.article, a.article:hover {
 #content {
     transition: all 0.3s;
     margin-top: 60px;
-    margin-left: calc(21% - 25px);    
+    margin-left: calc(21% - 25px);
 }
 
 .col-sm-12{
@@ -225,6 +225,203 @@ a.article, a.article:hover {
 .content_sidebar {
     margin-left: 10% !important;
     margin-top: 60px;
+}
+
+/* ---------------------------------------------------
+    CARRITO
+----------------------------------------------------- */
+#div_carrito{
+    width: 450px;
+    top: 55px;
+    right: 0px;
+    margin-right: 5px;
+    background-color: #0E364C;
+    border: 4px solid transparent;
+    border-image: linear-gradient(45deg, #add356, #00dfa6, #ffcb52, #ff451f, #3dade9,#bf2fcb);
+    border-image-slice: 1;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    position: fixed;
+    display: none;
+    z-index: 9;
+}
+
+.num_productes{
+   font-size: 15px;
+   font-family: 'Gaegu', cursive;
+   top: 10px;
+   position: absolute;
+}
+
+.apartat_carrito{
+  width: 90px;
+}
+
+.h1_carrito{
+    color: white;
+    font-family: 'Gaegu', cursive;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+.hr_carrito{
+    color: white;
+    border-bottom: 2px solid white;
+    margin: 0px;
+  }
+
+.h3_carrito{
+    color: white;
+    font-family: 'Gaegu', cursive;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.taula_carrito{
+  color: white;
+  font-family: 'Gaegu', cursive;
+  text-align: center;
+  font-size: 17px;
+  border-color: white;
+  width: 100%;
+  border-right: 0px solid transparent;
+  border-top: 0px;
+  margin-top: -10px;
+}
+
+#total, .total_carrito{
+  color: white;
+  font-family: 'Gaegu', cursive;
+  font-size: 25px;
+  border-color: white;
+  display: none;
+  text-align: center;
+}
+
+#total{
+  width: 300px;
+  width: 100%;
+  margin-top: 10px;
+
+}
+
+#btn_eliminarPesaCarrito{
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    height: 28px;
+
+}
+
+.foto_carrito{
+  width: 35px;
+  margin: 0 auto;
+  margin-left: 5px;
+}
+
+.button{
+  font-family: 'Gaegu', cursive;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px;
+  margin: 7px;
+  position: relative;
+  color: #ecf0f1;
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#btn_buidar_carrito{
+  color: white;
+  display: none;
+  border: 2px solid white;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  float: left;
+}
+
+#btn_buidar_carrito:before{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+}
+
+#btn_buidar_carrito:hover{
+  color: #ecf0f1;
+}
+
+#btn_buidar_carrito:hover:before{
+  left: 0;
+}
+
+#nom_usuari_ocult{
+  display: none;
+}
+
+#btn_comprar_carrito{
+  display: none;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  float: right;
+}
+
+#btn_carrito{
+    cursor:pointer;
+    right: 10px;
+}
+
+#btn_comprar_carrito:before{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(50,205,50,1));
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#btn_comprar_carrito:hover{
+  color: #ecf0f1;
+}
+
+#btn_comprar_carrito:hover:before{
+  left: 0;
+}
+
+.img_tancar_carrito{
+  cursor: pointer;
+  width: 5%;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.img_tancar_carrito:hover{
+  width: 6%;
 }
 
 /* ---------------------------------------------------
@@ -239,8 +436,8 @@ a.article, a.article:hover {
     font-weight: bold;
 }
 .panel-info>.panel-heading{
-   background-color: rgb(14, 55, 77); 
-   color: white;   
+   background-color: rgb(14, 55, 77);
+   color: white;
 }
 .panel-info{
     border-color: rgb(14, 55, 77);
@@ -278,21 +475,21 @@ a.article, a.article:hover {
 }
 
 .turntable {
-  margin: 0px; 
+  margin: 0px;
 }
 .turntable ul {
   padding: 0px;
-  margin: 0px; 
+  margin: 0px;
 }
 .turntable ul li {
   list-style-type: none;
-  display: none; 
+  display: none;
 }
 .turntable ul li img {
-  width: 100%; 
+  width: 100%;
 }
 .turntable ul li.active {
-  display: block; 
+  display: block;
 }
 
 /* ---------------------------------------------------
@@ -308,12 +505,12 @@ a.article, a.article:hover {
 
 #novetats_cos{
     margin: 0 auto;
-    margin-top: 25px;    
+    margin-top: 25px;
     width: 90%;
 }
 
 #novetats_esquerra{
-    
+
     background-color: rgba(255, 255, 255, .8);
     z-index: -1;
 }
@@ -355,7 +552,7 @@ a.article, a.article:hover {
 
 #cos_home{
     margin: 0 auto;
-    margin-top: 25px;    
+    margin-top: 25px;
     width: 90%;
     background-color: rgba(255, 255, 255, .8);
     margin-bottom: 25px;
@@ -418,7 +615,7 @@ a.article, a.article:hover {
     height: 20px;
     border-radius: 25px;
     width: 100%;
-    
+
 }
 
 .opcio1{
@@ -426,7 +623,7 @@ a.article, a.article:hover {
     height: 200px;
 }
 .opcio2{
-   background-color: #F4CCCC; 
+   background-color: #F4CCCC;
 }
 
 #color_1{
@@ -515,7 +712,7 @@ input[type=radio] + label>img {
     background-color: #0e364c;
     padding: 20px;
     border-radius: 10px;
-    
+
 }
 
 #dadesConfiguracio{
@@ -538,7 +735,7 @@ input[type=radio] + label>img {
 
 #perfil_cos{
     margin: 0 auto;
-    margin-top: 25px;    
+    margin-top: 25px;
     width: 90%;
     background-color: rgba(255, 255, 255, .8);
     font-size: 16px;
@@ -553,21 +750,21 @@ input[type=radio] + label>img {
     margin-top: 5%;
     padding-left: 0px;
     padding-right: 0px;
-    
+
 }
 
 .img_subestacio{
     width: 30%;
     border: 2px solid ;
     margin-bottom: 10px;
-    
+
 }
 .centrat{
     text-align: center;
     margin-top: 10px;
     border-left: 5px solid #0e364c;
     border-right: 5px solid #0e364c;
-    background-color: #e5e5e5; 
+    background-color: #e5e5e5;
     margin: 0 auto;
     width: 90%;
     border-radius: 10px;
@@ -670,12 +867,12 @@ th{text-align: center;
 .label_moda{
     width: 100%;
     text-align: center;
-    
+
 }
 
 .div_upload_gran{
     margin-top: 15px;
-    
+
 }
 
 #div_upload{
@@ -688,7 +885,7 @@ th{text-align: center;
 
 #afegirModes_Cos{
     margin: 0 auto;
-    margin-top: 25px;    
+    margin-top: 25px;
     width: 90%;
     background-color: rgba(255, 255, 255, .8);
     font-size: 16px;
@@ -715,7 +912,7 @@ th{text-align: center;
 }
 
 .foto_rss{
-    width: 70%; 
+    width: 70%;
     margin-left: 16%;
 }
 
@@ -756,8 +953,8 @@ th{text-align: center;
 .cos-roba{
     border-left: 5px solid #0e364c;
     border-right: 5px solid #0e364c;
-    background-color: #e5e5e5; 
-    
+    background-color: #e5e5e5;
+
     border-radius: 10px;
     margin: 10px;
     height: auto;
@@ -780,11 +977,11 @@ th{text-align: center;
 .comprar-bto{
     background-color: #0e364c;
     margin: 17px;
-    
+
 }
 
 #quantitat{
-    
+
 }
 
 .div_combinacio{
@@ -801,7 +998,7 @@ th{text-align: center;
 #myModal{
     margin-top: 50px;
     margin-left: 100px;
-    
+
 }
 
 .btn_eliminarCombinacio{
@@ -829,7 +1026,7 @@ th{text-align: center;
     border: 2px solid #FF0000;
     padding: 4px;
     border-radius: 25px;
-    
+
 }
 
 .activat{
@@ -844,7 +1041,7 @@ th{text-align: center;
   max-width: 165px;
   margin: 0 auto;
   margin-bottom: 10px;
-  
+
 }
 .count-input input {
   width: 100%;
@@ -891,7 +1088,7 @@ th{text-align: center;
 }
 
 @media all and (max-width:768px){
-    
+
     .navbar-inverse .drop_menu {display: block;visibility: visible;width: 110px;height:1000px;padding:0px 20px;position: absolute;right:-100px;
     transition:all ease 0.5s;border-top: 0px solid;cursor: pointer;}
 
@@ -1002,7 +1199,7 @@ th{text-align: center;
     #sidebarCollapse span {
         display: none;
     }
-    
+
     #dadesConfiguracio{
         margin-top: 10px;
     }

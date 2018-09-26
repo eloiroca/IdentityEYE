@@ -30,6 +30,7 @@ Route::get('/generadorConfigurador', 'GeneradorController@generadorConfigurador'
 Route::get('/generarRoba', 'GeneradorController@generarRoba')->name('generarRoba');
 Route::get('/generarCombinacio', 'GeneradorController@generarCombinacio')->name('generarCombinacio');
 Route::get('/combinacions', 'GeneradorController@combinacions')->name('combinacions');
+Route::get('/pagamentcarrito', 'GeneradorController@pagamentcarrito')->name('pagamentcarrito');
 
 Route::post('/ajax_subestacio','PerfilController@ajax_subestacio')->name('ajax_subestacio');
 Route::post('/dades_primerPerfil','PerfilController@dades_primerPerfil')->name('dades_primerPerfil');
@@ -40,5 +41,6 @@ Route::post('/dades_editarColors','GeneradorController@dades_editarColors')->nam
 Route::post('/ajax_eliminar','PerfilController@ajax_eliminar')->name('ajax_eliminar');
 Route::post('/dades_afegirCombinacio', 'GeneradorController@dades_afegirCombinacio')->name('dades_afegirCombinacio');
 Route::post('/ajax_eliminarCombinacio', 'GeneradorController@ajax_eliminarCombinacio')->name('ajax_eliminarCombinacio');
-
-
+Route::post('/ajax_comprarRoba', 'GeneradorController@ajax_comprarRoba')->name('ajax_comprarRoba');
+Route::post('/ajax_actualitzarCarrito', 'GeneradorController@ajax_actualitzarCarrito')->name('ajax_actualitzarCarrito');
+Route::post('/ajax_eliminarPesaCarrito', 'GeneradorController@ajax_eliminarPesaCarrito')->name('ajax_eliminarPesaCarrito');

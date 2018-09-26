@@ -3,11 +3,10 @@
 @section('sidebar')
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3> 
-                
-                    
+            <h3 class="h3_sidebar">{{ ucfirst(Auth::user()->name) }}</h3>
+
             <strong>{{ Auth::user()->name }}</strong>
-              
+
         </div>
 
         <ul class="list-unstyled components">
@@ -57,7 +56,7 @@
                     Próxima Moda
                 </a>
             </li>
-            
+
         </ul>
 
         <ul class="list-unstyled CTAs">
@@ -88,17 +87,16 @@
                 ?>
             <br><br>
             <h3 class="h3_normal">Ropa de la Tienda</h3>
-            <hr class="hr_dreta">    
-                <?php 
+            <hr class="hr_dreta">
+                <?php
                     for ($i=0; $i<count($dades['roba']); $i++){
                         echo "<div class='col-md-2 cos-roba'><p class='titol-productes'>".$dades['roba'][$i]->nom."</p><hr class='hr-productes'><img class='imatge-productes' src='".URL::asset('img/fotos_productes/'.$dades['roba'][$i]->foto)."'/>".$dades['roba'][$i]->preu."€ <button class='btn btn-primary comprar-bto btn_comprarRoba' data-id='".$dades['roba'][$i]->id."'><span class='glyphicon glyphicon-shopping-cart'></span></button><div class='count-input space-bottom'> <a class='incr-btn' data-action='decrease' href='#'>–</a> <input class='quantity' type='number' readonly name='quantity' value='1'/> <a class='incr-btn' data-action='increase' href='#'>&plus;</a> </div></div>";
                     }
 
                 ?>
+
         </div>
-        
-        
-        
+
     </div>
 
 
