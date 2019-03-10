@@ -141,7 +141,7 @@
 
                         <b><i>V1.7<i></b>
                         <ul>
-                          <li>Se ha añadido la opcion de Carrito de Compra al comprar una pieza, o combinación</li>                      
+                          <li>Se ha añadido la opcion de Carrito de Compra al comprar una pieza, o combinación</li>
                         </ul>
 
                         <b><i>V1.6<i></b>
@@ -185,6 +185,7 @@
 
                 </div>
             </div>
+          </div>
         <script>
             //Rutes pel JS, per complementar els href
             var config = {
