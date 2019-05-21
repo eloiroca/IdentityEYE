@@ -116,6 +116,7 @@ class GeneradorController extends Controller
         }
     }
 
+
     //Funcio que pintara dos peces de roba random
     public function generarCombinacio(){
         $existencia = PerfilModel::mirar_perfil(Auth::user()->id);
@@ -175,6 +176,7 @@ class GeneradorController extends Controller
 
     //Funcio que guardara la roba al carrito de compra mitjançant una cookie
     public function ajax_comprarRoba(Request $request){
+
         $data = Input::json()->all();
         $id_usuari = Auth::user()->id;
 
@@ -216,8 +218,12 @@ class GeneradorController extends Controller
       public function pagamentcarrito(){
         if (isset($_COOKIE['cookie_carrito_'.Auth::user()->name])){
             $data = unserialize($_COOKIE['cookie_carrito_'.Auth::user()->name]);
-            $dades = ['data' => $data];
-            return view('pagamentcarrito')->with('dades', $dades);
+            $dades_carrito = ['data' => $data];
+            //Guardem la consulta a la Base de Dades del Projecte ASIX
+            $dades_usuari = PerfilModel::obtenir_dadesConfiguracio(Auth::user()->id);
+            $dades_compra = GeneradorModel::guardarCarrito($dades_usuari, $dades_carrito);
+            //return view('pagamentcarrito')->with('dades', $dades);
+            
         }else{
             return $this->generarRoba();
         }

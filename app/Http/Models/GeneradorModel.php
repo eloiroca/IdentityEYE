@@ -72,4 +72,17 @@ class GeneradorModel extends Model
         return $roba;
     }
 
+    //FUncio que guardara el carrito a la base de dades de ASIX
+    public static function guardarCarrito($dades_usuari, $dades_compra){
+        //$roba = DB::table('roba')->where('id', $id)->first();
+        //return $;
+        $sql = "insert into comandesvenda (id_usuari, nom, cognoms, nif, genere, poblacio, foto_perfil, estat) values (".$dades_usuari->id_usuari.",'".$dades_usuari->nom."','".$dades_usuari->cognoms."','".$dades_usuari->nif."','".$dades_usuari->genere."', '".$dades_usuari->poblacio."', '".$dades_usuari->foto_perfil."', 'pendent')";
+        $dades_comanda = DB::connection('mysql2')->insert($sql);
+        //$mysqli = new mysqli('localhost', 'root', 'Informatica:1', 'monitornodeserver');
+        echo $sql;
+        echo '<pre>';
+        print_r($dades_comanda);
+        echo '</pre>';
+        //echo $sql;
+    }
 }
