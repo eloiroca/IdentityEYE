@@ -222,8 +222,8 @@ class GeneradorController extends Controller
             //Guardem la consulta a la Base de Dades del Projecte ASIX
             $dades_usuari = PerfilModel::obtenir_dadesConfiguracio(Auth::user()->id);
             $dades_compra = GeneradorModel::guardarCarrito($dades_usuari, $dades_carrito);
-            //return view('pagamentcarrito')->with('dades', $dades);
-            
+            return view('pagamentcarrito')->with('dades', $dades_carrito);
+
         }else{
             return $this->generarRoba();
         }

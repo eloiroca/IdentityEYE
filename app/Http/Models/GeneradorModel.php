@@ -75,14 +75,23 @@ class GeneradorModel extends Model
     //FUncio que guardara el carrito a la base de dades de ASIX
     public static function guardarCarrito($dades_usuari, $dades_compra){
         //$roba = DB::table('roba')->where('id', $id)->first();
-        //return $;
-        $sql = "insert into comandesvenda (id_usuari, nom, cognoms, nif, genere, poblacio, foto_perfil, estat) values (".$dades_usuari->id_usuari.",'".$dades_usuari->nom."','".$dades_usuari->cognoms."','".$dades_usuari->nif."','".$dades_usuari->genere."', '".$dades_usuari->poblacio."', '".$dades_usuari->foto_perfil."', 'pendent')";
-        $dades_comanda = DB::connection('mysql2')->insert($sql);
-        //$mysqli = new mysqli('localhost', 'root', 'Informatica:1', 'monitornodeserver');
-        echo $sql;
-        echo '<pre>';
-        print_r($dades_comanda);
-        echo '</pre>';
-        //echo $sql;
+
+        $id_comanda = rand(10,10000)*384;
+        $sql = "insert into comandesvenda (id_usuari, id_comanda, nom, cognoms, nif, genere, poblacio, foto_perfil, estat) values (".$dades_usuari->id_usuari.",".$id_comanda.",'".$dades_usuari->nom."','".$dades_usuari->cognoms."','".$dades_usuari->nif."','".$dades_usuari->genere."', '".$dades_usuari->poblacio."', '".$dades_usuari->foto_perfil."', 'pendent')";
+        DB::connection('mysql2')->insert($sql);
+
+        for ($i=0; $i<count($dades_compra['data']); $i++){
+            $preu = $dades_compra['data'][$i][3];
+            $subject = $preu ;
+            $search = "<span class='preu_producte'>" ;
+            $preu = str_replace($search, '', $subject) ;
+            $subject = $preu ;
+            $search = "</span>" ;
+            $preu = str_replace($search, '', $subject) ;
+
+            $sql_producte = "insert into comandesproductes (id_comanda, nom, preu) values (".$id_comanda.",'".$dades_compra['data'][$i][1]."','".$preu."')";
+            DB::connection('mysql2')->insert($sql_producte);
+        }
+
     }
 }
